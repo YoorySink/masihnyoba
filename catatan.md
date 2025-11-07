@@ -11,4 +11,4 @@ Collection adalah struktur data yang lebih fleksibel yang termasuk berbagai tipe
 | Ukuran             | Tetap (fixed)               | Dinamis (bisa bertambah/berkurang) |
 | Tipe Data Elemen   | Biasanya sama               | Bisa berbeda (tergantung implementasi) |
 | Operasi            | Terbatas (akses, update)    | Lebih lengkap (add, remove, search, sort) |
-| Contoh             | `$arr = [1, 2, 3];`        | `add`, `remove`, `size` atau ada [di sini](ClassCollection.php) |
+| Contoh             | `$arr = [1, 2, 3];`        | `add`, `remove`, `size` atau ada di [ClassCollection.php] |

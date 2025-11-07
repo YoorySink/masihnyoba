@@ -1,5 +1,5 @@
 <?php
-require 'source/ClassCollection.php';
+require 'ClassCollection.php';
 
 
 echo "=== ArrayList ===\n";

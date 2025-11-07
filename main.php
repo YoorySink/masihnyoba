@@ -1,56 +1,73 @@
 <?php
-require 'source/Classintermilan.php';
+require 'source/ClassCollection.php';
 
-// === ArrayList ===
+
+echo "=== ArrayList ===\n";
 $list = new ArrayList();
-$list->add("A");
-$list->add("B");
-$list->add("C");
-echo "ArrayList:\n";
+$list->add("Apel");
+$list->add("Mangga");
+$list->add("Jeruk");
+echo "Isi awal: \n";
 print_r($list->getAll());
+$list->set(1, "Durian");
+$list->remove("Jeruk");
+echo "Isi akhir: \n";
+print_r($list->getAll());
+echo "Jumlah elemen: " . $list->size() . "\n\n";
 
-// === LinkedList ===
+
+echo "=== LinkedList ===\n";
 $link = new LinkedList();
 $link->add("Node1");
 $link->add("Node2");
 $link->add("Node3");
-echo "\nLinkedList:\n";
+echo "Isi awal: \n";
 print_r($link->getAll());
+$link->set(0, "NodeAwal");
+$link->remove("Node2");
+echo "Isi akhir: \n";
+print_r($link->getAll());
+echo "Node[1]: " . $link->get(1) . "\n";
+echo "Jumlah node: " . $link->size() . "\n\n";
 
-// === Stack ===
+
+echo "=== Stack (LIFO) ===\n";
 $stack = new Stack();
-$stack->push("X");
-$stack->push("Y");
-$stack->push("Z");
-echo "\nStack (LIFO):\n";
+$stack->push("Langkah1");
+$stack->push("Langkah2");
+$stack->push("Langkah3");
+echo "Isi stack: \n";
 print_r($stack->getAll());
+echo "Elemen teratas: " . $stack->peek() . "\n";
 echo "Pop: " . $stack->pop() . "\n";
+echo "Isi stack sekarang: \n";
 print_r($stack->getAll());
-
-// === Queue ===
-$queue = new Queue();
-$queue->enqueue("1");
-$queue->enqueue("2");
-$queue->enqueue("3");
-echo "\nQueue (FIFO):\n";
-print_r($queue->getAll());
-echo "Dequeue: " . $queue->dequeue() . "\n";
-print_r($queue->getAll());
-
-// === HashMap ===
-$map = new HashMap();
-$map->put("nama", "Yorline");
-$map->put("umur", 21);
-$map->put("kota", "Malang");
-echo "\nHashMap:\n";
-print_r($map->getAll());
-echo "Nama: " . $map->get("nama") . "\n";
-
-// === Iterator ===
-echo "\nIterator dari ArrayList:\n";
-$it = new SimpleIterator($list->getAll());
-while ($it->hasNext()) {
-    echo $it->next() . " ";
-}
 echo "\n";
+
+
+echo "=== Queue (FIFO) ===\n";
+$q = new Queue();
+$q->enqueue("Antrian1");
+$q->enqueue("Antrian2");
+$q->enqueue("Antrian3");
+echo "Isi queue: \n";
+print_r($q->getAll());
+echo "Dequeue: " . $q->dequeue() . "\n";
+echo "Peek sekarang: " . $q->peek() . "\n";
+echo "Isi queue sekarang: \n";
+print_r($q->getAll());
+echo "\n";
+
+
+echo "=== HashMap ===\n";
+$map = new HashMap();
+$map->put("nama", "lutpi");
+$map->put("umur", 28);
+$map->put("hobi", "mancing");
+echo "Isi hashmap:\n";
+print_r($map->getAll());
+$map->remove("umur");
+echo "Setelah remove 'umur':\n";
+print_r($map->getAll());
+echo "Jumlah data: " . $map->size() . "\n";
 ?>

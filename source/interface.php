@@ -9,12 +9,14 @@ interface CollectionInterface {
 //List dasar (turunan Collection)
 interface ListInterface extends CollectionInterface {
     public function get($index);
+    public function set($index, $value);
 }
 
 //Queue (FIFO)
 interface QueueInterface extends CollectionInterface {
     public function enqueue($item);
     public function dequeue();
+    public function peek();
 }
 
 //Map (key-value)
